@@ -1,0 +1,77 @@
+<input type="text" id="searchInput">
+
+<div id="itemContainer">
+  <div class="item">
+    <h5>Item 1</h5>
+  </div>
+  <div class="item">
+    <h5>Item 2</h5>
+  </div>
+  <div class="item">
+    <h5>Item 3</h5>
+    <strong>jghkjhkj</strong>
+  </div>
+  <div class="item">
+    <h5>Item 4</h5>
+  </div>
+  <div class="item">
+   <h5>soni</h5> 
+   <h5>Item 5</h5>
+    <h6>saagar</h6>
+    <strong>asdfg</strong>
+    
+  </div>
+</div>
+
+
+
+
+
+<input type="text" id="searchInput">
+
+<div id="itemContainer">
+  <div class="item">Item 1 <strong>strong1</strong></div>
+  <div class="item">Item 2 <strong>strong2</strong></div>
+  <div class="item">Item 3 <strong>strong3</strong></div>
+  <div class="item">Item 4 <strong>strong4</strong></div>
+  <div class="item">Item 5 <strong>strong5</strong></div>
+</div>
+
+<script type="text/javascript">
+  var searchInput = document.getElementById("searchInput");
+  var itemContainer = document.getElementById("itemContainer");
+
+  searchInput.addEventListener("keyup", function() {
+    var searchQuery = searchInput.value.toLowerCase();
+
+    // Loop through the items
+    for (var i = 0; i < itemContainer.children.length; i++) {
+      var item = itemContainer.children[i];
+      var strongTag = item.getElementsByTagName("strong")[0];
+      if (strongTag && strongTag.textContent.toLowerCase().indexOf(searchQuery) !== -1) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    }
+  });
+
+
+  var searchInput = document.getElementById("searchInput");
+  var itemContainer = document.getElementById("itemContainer");
+
+  searchInput.addEventListener("keyup", function() {
+    var searchQuery = searchInput.value.toLowerCase();
+
+    // Loop through the items
+    for (var i = 0; i < itemContainer.children.length; i++) {
+      var item = itemContainer.children[i];
+      var itemValue = item.querySelector("strong").textContent.toLowerCase();
+      if (itemValue.indexOf(searchQuery) !== -1) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    }
+  });
+</script>

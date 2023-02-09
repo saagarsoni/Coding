@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search for Product Names</title>
+    <script>
+      window.onload = function() {
+        const searchTextbox = document.querySelector('input[type="text"]');
+        const products = document.querySelectorAll('.product');
+
+        searchTextbox.addEventListener('keyup', function() {
+          const searchTerm = searchTextbox.value.toLowerCase();
+
+          for (let i = 0; i < products.length; i++) {
+            const product = products[i];
+            const productName = product.querySelector('.product-name').textContent.toLowerCase();
+            if (productName.includes(searchTerm)) {
+              product.style.display = 'block';
+            } else {
+              product.style.display = 'none';
+            }
+          }
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <div>
+      <input type="text" placeholder="Search">
+    </div>
+    <div class="product">
+      <div class="product-name">saagar 1</div>
+      <div class="product-price">$10</div>
+    </div>
+    <div class="product">
+      <div class="product-name">Soni 2</div>
+      <div class="product-price">$20</div>
+    </div>
+    <div class="product">
+      <div class="product-name">soni 3</div>
+      <div class="product-price">$30</div>
+    </div>
+    <div class="product">
+      <div class="product-name">Product 4</div>
+      <div class="product-price">$40</div>
+    </div>
+  </body>
+</html>

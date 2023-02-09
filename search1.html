@@ -1,0 +1,44 @@
+<input type="text" id="searchInput">
+
+<div id="itemContainer">
+  <div class="item">
+    <h5>Item 1</h5>
+  </div>
+  <div class="item">
+    <h5>Item 2</h5>
+  </div>
+  <div class="item">
+    <h5>Item 3</h5>
+  </div>
+  <div class="item">
+    <h5>Item 4</h5>
+  </div>
+  <div class="item1">
+    <h5>shagg 5</h5>
+  </div>
+
+  <div class="item">
+   <h5>Item 51</h5>
+   <h5>Saagar</h5>
+ </div>
+</div>
+
+<script>
+  var searchInput = document.getElementById("searchInput");
+  var itemContainer = document.getElementById("itemContainer");
+
+  searchInput.addEventListener("keyup", function() {
+    var searchQuery = searchInput.value.toLowerCase();
+
+    // Loop through the items
+    for (var i = 0; i < itemContainer.children.length; i++) {
+      var item = itemContainer.children[i];
+      var h5 = item.getElementsByTagName("h5")[0];
+      if (h5.textContent.toLowerCase().indexOf(searchQuery) !== -1) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    }
+  });
+</script>

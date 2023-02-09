@@ -1,0 +1,61 @@
+<input type="text" id="searchInput">
+
+<div id="itemContainer">
+  <div class="item">One 1</div>
+  <div class="item">Two 2</div>
+  <div class="item">Three 3</div>
+  <div class="item">Four 4</div>
+  <div class="item">Item 5</div>
+  <!-- Rose Water Start-->
+        <!-- Card Start -->
+        <div class="col">
+         <div class="card h-100">
+             <div class="card-body">
+                 <h5 class="card-title">Rose Water</h5>
+                 <p class="card-text" id="roseWaterCard"></p>
+                 <a href="#" class="btn btn-info align-content-center">Buy Now</a>
+                 <button type="button" class="btn btn-success" data-toggle="modal"
+                     data-target="#roseWater">Know jjjj</button>
+             </div>
+         </div>
+     </div>
+     <!-- Card End -->
+     <!-- Rose Water End-->
+     <!-- HONEY Start-->
+   <div class="col">
+      <div class="card h-100">
+          <div class="card-body">
+              <h5 class="card-title">Honey</h5>
+              <p class="card-text" id="honeyCard"></p>
+              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#honeyBuy">Buy Nao</button>
+              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#honeyModal">Know
+                  More</button>
+          </div>
+      </div>
+  </div>
+  
+  <!-- HONEY End-->
+</div>
+   
+<script>
+  var searchInput = document.getElementById("searchInput");
+  var itemContainer = document.getElementById("itemContainer");
+
+  searchInput.addEventListener("keyup", function() {
+    var searchQuery = searchInput.value.toLowerCase();
+    console.log("Search query: " + searchQuery);
+
+    // Loop through the items
+    for (var i = 0; i < itemContainer.children.length; i++) {
+      var item = itemContainer.children[i];
+      console.log("Checking item: " + item.textContent);
+      if (item.textContent.toLowerCase().indexOf(searchQuery) !== -1) {
+        item.style.display = "block";
+        console.log("Match found: " + item.textContent);
+      } else {
+        item.style.display = "none";
+        console.log("No match found: " + item.textContent);
+      }
+    }
+  });
+</script>
