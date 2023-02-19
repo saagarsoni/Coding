@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Popup Form Example</title>
+    <style>
+      
+    </style>
+    <script>
+      var popup;
+      function openPopupForm() {
+        var w = 400; // Width of the popup window
+        var h = 400; // Height of the popup window
+        var left = (screen.width/2)-(w/2); // Calculate the left position
+        var top = (screen.height/2)-(h/2); // Calculate the top position
+        popup = window.open("testimonial.html", "popup", "width=" + w + ",height=" + h + ",left=" + left + ",top=" + top + ",scrollbars=yes,location=yes,status=yes");
+        popup.focus(); // Give the focus to the popup window
+        popup.onblur = function() { popup.close(); }; // Close the window when it loses focus
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="openPopupForm()">Open Form</button>
+  </body>
+</html>
